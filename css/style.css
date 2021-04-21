@@ -1,0 +1,314 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+
+html {
+    background: #181719;
+    color: #fff;
+}
+
+body {
+    width: 95%;
+    margin: 0 auto;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* typography */
+
+.main-title,
+.design-credit {
+    font-family: 'Lora', serif;
+}
+
+.main-title {
+    font-weight: 500;
+    font-size: 2.25rem;
+}
+
+.intro {
+    font-size: .85rem;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.read-more {
+    font-size: .85rem;
+    font-weight: 700;
+}
+
+.arrow {
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.arrow:hover,
+.arrow:focus {
+    color: #ca9911;;
+}
+
+.designer-name {
+    font-size: .75rem;
+    font-weight: 500;
+}
+
+.designer-title {
+    font-size: .625rem;
+    font-weight: 500;
+    color: #828282;
+}
+
+.design-credit {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+.footer {
+    margin-top: 5em;
+}
+
+.footer,
+footer a {
+    font-size: .85rem;
+    font-weight: 500;
+    color: #A9A9A9;
+    text-align: center;
+}
+
+footer a {
+    font-weight: 700;
+}
+
+footer a:hover,
+footer a:focus {
+    color: #ca9911;
+}
+
+@media (min-width: 800px) {
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .intro {
+        font-size: 1.5rem;
+    }
+
+    .read-more {
+        font-size: 1.125rem;
+    }
+
+    .arrow {
+        font-size: 1.5rem;
+    }
+}
+
+/* layout */
+
+main {
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width:800px) {
+    body {
+        width: 60%;
+        margin: 0 auto;
+    }
+
+    main {
+        height: 80vh;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+/* navigation */
+
+.header-content {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    font-family: 'Crimson Pro', serif;
+    font-size: .85rem;
+    font-weight: 200;
+    text-transform: uppercase;
+    border: 1px solid #fff;
+    padding: .5em;
+}
+
+.nav-bar {
+    background: #181719;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 100%;
+    width: 100%;
+    max-width: 600px;
+    transform: translateX(0);
+    transition: transform 250ms;
+}
+
+.btn-open-nav {
+    font-size: 1.5em;
+    margin-left: 0;
+    cursor: pointer;
+}
+
+.nav-open {
+    transform: translateX(-100%);
+}
+
+.nav-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    list-style: none;
+    text-align: center;
+    padding: 0;
+}
+
+.nav-item {
+    margin: 1em 0;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.125;
+    font-weight: 500;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #ca9911;
+}
+
+.active {
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
+    padding-bottom: .3em;
+}
+
+.active:hover,
+.active:focus {
+    border-bottom: 2px solid #ca9911;
+    color: #ca9911;
+}
+
+.btn-close-nav {
+    cursor: pointer;
+    font-size: 2em;
+    position: absolute;
+    top: .5em;
+    right: .5em;
+}
+
+@media (min-width: 600px) {
+
+    .btn-open-nav,
+    .btn-close-nav {
+        display: none;
+    }
+
+    .nav-bar {
+        position: initial;
+    }
+
+    .nav-list {
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    .nav-link {
+        margin-left: 4em;
+    }
+}
+
+/* intro section */
+
+.intro {
+    width: 17em;
+    hyphens: none;
+}
+
+.read-more-line {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1em;
+}
+
+/* designer section */
+
+.photo-content {
+    display: grid;
+    grid-template-columns: 1em 1fr 1fr 1em;
+    grid-template-areas: 
+        "mainphoto mainphoto mainphoto mainphoto"
+        ". . card .";
+}
+
+.main-photo {
+    width: 100%;
+    max-width: 600px;
+    margin: 2em auto 0;
+    object-fit: cover;
+    grid-area: mainphoto;
+}
+
+.designer-card {
+    margin-top: -50px;
+    grid-area: card;
+    background: #181719;
+    width: 340px;
+    height: 150px;
+    box-shadow: 0px 4px 4px #000;
+    padding: 1em 2em;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+        "photo name name ."
+        "photo title title ."
+        "credit credit credit .";
+}
+
+.designer-photo {
+    width: 45px;
+    border-radius: 100px;
+    grid-area: photo;
+}
+
+.designer-name {
+    grid-area: name;
+    margin-bottom: .2em;
+}
+
+.designer-title {
+    grid-area: title;
+    margin-top: 0;
+}
+
+.design-credit {
+    grid-area: credit;
+    margin-top: 1em;
+}
+
+@media (min-width: 740px) {
+    
+    .main-photo {
+        margin-right: 0;
+    }
+   
+}
+
